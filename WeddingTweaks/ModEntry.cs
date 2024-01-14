@@ -81,7 +81,7 @@ namespace WeddingTweaks
         private void GameLoop_DayStarted(object sender, DayStartedEventArgs e)
         {
             npcWitnessAsked.Clear();
-            /*
+            
             var task = new Task(delegate ()
             {
                 Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
@@ -90,7 +90,7 @@ namespace WeddingTweaks
                 {
                 }
             });
-            */
+            
         }
         public IEnumerator StartWeddings()
         {
