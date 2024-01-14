@@ -22,7 +22,7 @@ namespace WeddingTweaks
             {
                 if (!Config.EnableMod || !Config.FixWeddingStart)
                     return;
-                if (!Game1.eventUp && Game1.weddingsToday.Count > 0 && (Game1.CurrentEvent == null || Game1.CurrentEvent.id != -2) && Game1.currentLocation != null && Game1.currentLocation.Name != "Temp")
+                if (!Game1.eventUp && Game1.weddingsToday.Count > 0 && (Game1.CurrentEvent == null || Game1.CurrentEvent.id != "-2") && Game1.currentLocation != null && Game1.currentLocation.Name != "Temp")
                 {
                     SMonitor.Log($"Removing preday wedding for today");
                     Game1.weddingsToday.Clear();

@@ -39,8 +39,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Familiars", "Familiars\Fami
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quotes", "Quotes\Quotes.csproj", "{4FB39A1B-1952-40B2-A328-D1B8BEF2F95B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VideoPlayer", "VideoPlayer\VideoPlayer.csproj", "{CC266241-EA19-41EB-A6AC-A86661981912}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NonRandomPrairieKing", "NonRandomPrairieKing\NonRandomPrairieKing.csproj", "{66F87E22-D4A4-423B-BAE3-70130FFAD5F9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialNetwork", "SocialNetwork\SocialNetwork.csproj", "{D4056EE7-7B0C-4A97-BB15-CCFAF924A4F5}"
@@ -250,8 +248,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FarmerPortraits", "FarmerPortraits\FarmerPortraits.csproj", "{0CDE5F6A-0FA7-449C-9F5F-88E922B4722F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FruitTreeTweaks", "FruitTreeTweaks\FruitTreeTweaks.csproj", "{FA6D4D17-12CD-4089-BDE6-D34991005321}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AprilFools", "AprilFools\AprilFools.csproj", "{6E0E1CC6-3CFE-4605-8529-E809BC0447CE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContentPackCreator", "ContentPackCreator\ContentPackCreator.csproj", "{EB4BDAA2-9F00-413F-964D-0EFD09244D00}"
 EndProject
@@ -743,14 +739,6 @@ Global
 		{4FB39A1B-1952-40B2-A328-D1B8BEF2F95B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4FB39A1B-1952-40B2-A328-D1B8BEF2F95B}.Release|x64.ActiveCfg = Release|x64
 		{4FB39A1B-1952-40B2-A328-D1B8BEF2F95B}.Release|x64.Build.0 = Release|x64
-		{CC266241-EA19-41EB-A6AC-A86661981912}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CC266241-EA19-41EB-A6AC-A86661981912}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CC266241-EA19-41EB-A6AC-A86661981912}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{CC266241-EA19-41EB-A6AC-A86661981912}.Debug|x64.Build.0 = Debug|Any CPU
-		{CC266241-EA19-41EB-A6AC-A86661981912}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CC266241-EA19-41EB-A6AC-A86661981912}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CC266241-EA19-41EB-A6AC-A86661981912}.Release|x64.ActiveCfg = Release|Any CPU
-		{CC266241-EA19-41EB-A6AC-A86661981912}.Release|x64.Build.0 = Release|Any CPU
 		{66F87E22-D4A4-423B-BAE3-70130FFAD5F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{66F87E22-D4A4-423B-BAE3-70130FFAD5F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66F87E22-D4A4-423B-BAE3-70130FFAD5F9}.Debug|x64.ActiveCfg = Debug|x64
@@ -1567,14 +1555,6 @@ Global
 		{FA6D4D17-12CD-4089-BDE6-D34991005321}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FA6D4D17-12CD-4089-BDE6-D34991005321}.Release|x64.ActiveCfg = Release|x64
 		{FA6D4D17-12CD-4089-BDE6-D34991005321}.Release|x64.Build.0 = Release|x64
-		{6E0E1CC6-3CFE-4605-8529-E809BC0447CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6E0E1CC6-3CFE-4605-8529-E809BC0447CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6E0E1CC6-3CFE-4605-8529-E809BC0447CE}.Debug|x64.ActiveCfg = Debug|x64
-		{6E0E1CC6-3CFE-4605-8529-E809BC0447CE}.Debug|x64.Build.0 = Debug|x64
-		{6E0E1CC6-3CFE-4605-8529-E809BC0447CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6E0E1CC6-3CFE-4605-8529-E809BC0447CE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6E0E1CC6-3CFE-4605-8529-E809BC0447CE}.Release|x64.ActiveCfg = Release|x64
-		{6E0E1CC6-3CFE-4605-8529-E809BC0447CE}.Release|x64.Build.0 = Release|x64
 		{EB4BDAA2-9F00-413F-964D-0EFD09244D00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EB4BDAA2-9F00-413F-964D-0EFD09244D00}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB4BDAA2-9F00-413F-964D-0EFD09244D00}.Debug|x64.ActiveCfg = Debug|x64

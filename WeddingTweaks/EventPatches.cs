@@ -153,7 +153,7 @@ namespace WeddingTweaks
                             if (Config.AllSpousesWearMarriageClothesAtWeddings)
                             {
                                 int frame = 37;
-                                if (actor.Gender == 0)
+                                if (actor.Gender == Gender.Male)
                                 {
                                     frame += 12;
                                 }
@@ -171,7 +171,7 @@ namespace WeddingTweaks
                                 });
                             }
                             else
-                                Utility.facePlayerEndBehavior(actor, location);
+                               facePlayerEndBehavior(actor, location);
                             continue;
                         }
                         if ((npcWitness is not null && actor.Name == npcWitness))
@@ -181,7 +181,7 @@ namespace WeddingTweaks
                             if (Config.AllSpousesWearMarriageClothesAtWeddings)
                             {
                                 int frame = 37;
-                                if (actor.Gender == 0)
+                                if (actor.Gender == Gender.Male)
                                 {
                                     frame += 12;
                                 }
@@ -199,7 +199,7 @@ namespace WeddingTweaks
                                 });
                             }
                             else
-                                Utility.facePlayerEndBehavior(actor, location);
+                                facePlayerEndBehavior(actor, location);
                             continue;
                         }
                         if (addSpouses && spouses.Contains(actor.Name))
@@ -238,7 +238,7 @@ namespace WeddingTweaks
                                 {
                                     flipped = true;
                                 }
-                                if (actor.Gender == 0)
+                                if (actor.Gender == Gender.Male)
                                 {
                                     frame += 12;
                                 }
@@ -256,7 +256,7 @@ namespace WeddingTweaks
                             });
                             }
                             else
-                                Utility.facePlayerEndBehavior(actor, location);
+                                facePlayerEndBehavior(actor, location);
                             continue;
                         }
                     }
@@ -323,7 +323,12 @@ namespace WeddingTweaks
                 }
             }
         }
-        
+
+        public static void facePlayerEndBehavior(Character c, GameLocation location)
+        {
+            c.faceGeneralDirection(new Vector2(Game1.player.GetBoundingBox().Center.X, Game1.player.GetBoundingBox().Center.Y), 0, opposite: false, useTileCalculations: false);
+        }
+
 
     }
 }

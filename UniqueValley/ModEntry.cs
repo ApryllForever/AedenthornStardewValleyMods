@@ -65,7 +65,7 @@ namespace UniqueValley
             {
                 if (!(Game1.locations[i] is MovieTheater))
                 {
-                    foreach (NPC c in Game1.locations[i].getCharacters())
+                    foreach (NPC c in Game1.locations[i].characters)
                     {
                         if (!c.isVillager())
                             continue;
