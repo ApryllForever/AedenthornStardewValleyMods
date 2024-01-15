@@ -21,7 +21,8 @@ namespace WeddingTweaks
 
         public static void prepareSpouseForWedding_Prefix(Farmer farmer)
         {
-            if(farmer.spouse == null)
+            farmer.friendshipData[farmer.spouse].Status = FriendshipStatus.Engaged;
+            if (farmer.spouse == null)
             {
                 Monitor.Log($"Spouse for {farmer.Name} is null");
                 foreach (string name in farmer.friendshipData.Keys)
@@ -35,10 +36,11 @@ namespace WeddingTweaks
                 }
             }
         }
-        public static void getCharacterFromName_Prefix(string name)
+        
+        public static void getCharacterFromName_Prefix(string name, bool mustBeVillager = false)
         {
             if (ModEntry.startingLoadActors)
-                lastGotCharacter = name;
+               lastGotCharacter = name;
         }
     }
 }

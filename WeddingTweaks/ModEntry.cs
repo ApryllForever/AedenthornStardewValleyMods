@@ -7,6 +7,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
+using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -71,9 +73,22 @@ namespace WeddingTweaks
             );
 
             harmony.Patch(
-               original: AccessTools.Method(typeof(Game1), nameof(Game1.getCharacterFromName), new Type[] { typeof(string), typeof(bool) }),
-               prefix: new HarmonyMethod(typeof(Game1Patches), nameof(Game1Patches.getCharacterFromName_Prefix))
-            );
+              original: AccessTools.Method(typeof(Game1), nameof(Game1.getCharacterFromName), new Type[] { typeof(string), typeof(bool) }),
+              prefix: new HarmonyMethod(typeof(Game1Patches), nameof(Game1Patches.getCharacterFromName_Prefix))
+             );
+
+            // Below are attempts which are now commented out, was trying to remove the ambiguous patch error. Failed.
+
+           // harmony.Patch(
+             // original: typeof(Game1).GetMethod(nameof(Game1.getCharacterFromName), 0, new[] { typeof(string), typeof(bool) } ),
+       // prefix: new HarmonyMethod(typeof(Game1Patches), nameof(Game1Patches.getCharacterFromName_Prefix))
+          // );
+
+          //  harmony.Patch(
+          // original: typeof(Game1).GetMethods().Single(static method => method.Name == nameof(Game1.getCharacterFromName) && method.GetGenericArguments().Length == 0), //typeof(Game1).GetMethods(nameof(Game1.getCharacterFromName)).Where(m => m.GetGenericArguments().Length is 0).First(),
+          //  prefix: new HarmonyMethod(typeof(Game1Patches), nameof(Game1Patches.getCharacterFromName_Prefix))
+        //);
+
 
             harmony.PatchAll();
         }

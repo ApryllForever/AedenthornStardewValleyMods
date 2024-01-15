@@ -19,7 +19,7 @@ namespace WeddingTweaks
             new int[]{30,63,3}
         };
         public static bool startingLoadActors = false;
-
+        
         [HarmonyPatch(typeof(Event), "setUpCharacters")]
         public static class Event_setUpCharacters_Patch
         {
@@ -171,7 +171,7 @@ namespace WeddingTweaks
                                 });
                             }
                             else
-                               facePlayerEndBehavior(actor, location);
+                                actor.faceGeneralDirection(new Vector2(Game1.player.GetBoundingBox().Center.X, Game1.player.GetBoundingBox().Center.Y), 0, opposite: false, useTileCalculations: false);
                             continue;
                         }
                         if ((npcWitness is not null && actor.Name == npcWitness))
@@ -199,7 +199,7 @@ namespace WeddingTweaks
                                 });
                             }
                             else
-                                facePlayerEndBehavior(actor, location);
+                                actor.faceGeneralDirection(new Vector2(Game1.player.GetBoundingBox().Center.X, Game1.player.GetBoundingBox().Center.Y), 0, opposite: false, useTileCalculations: false);
                             continue;
                         }
                         if (addSpouses && spouses.Contains(actor.Name))
@@ -256,7 +256,10 @@ namespace WeddingTweaks
                             });
                             }
                             else
-                                facePlayerEndBehavior(actor, location);
+
+                                actor.faceGeneralDirection(new Vector2(Game1.player.GetBoundingBox().Center.X, Game1.player.GetBoundingBox().Center.Y), 0, opposite: false, useTileCalculations: false);
+
+                               
                             continue;
                         }
                     }
@@ -269,10 +272,12 @@ namespace WeddingTweaks
             }
         }
 
+        
+
         [HarmonyPatch(typeof(Event), "endBehaviors")]
         public static class Event_endBehaviors_Patch
         {
-            public static void Postfix(string[] split)
+            public static void Postfix(string[] split, GameLocation location)
             {
                 try
                 {
@@ -292,8 +297,8 @@ namespace WeddingTweaks
                     SMonitor.Log($"Failed in {nameof(Event_endBehaviors_Patch)}:\n{ex}", LogLevel.Error);
                 }
             }
-        }
-
+        } 
+        
         [HarmonyPatch(typeof(Event), "command_loadActors")]
         public static class Event_command_loadActors_Patch
         {
@@ -323,11 +328,13 @@ namespace WeddingTweaks
                 }
             }
         }
+        
 
-        public static void facePlayerEndBehavior(Character c, GameLocation location)
-        {
-            c.faceGeneralDirection(new Vector2(Game1.player.GetBoundingBox().Center.X, Game1.player.GetBoundingBox().Center.Y), 0, opposite: false, useTileCalculations: false);
-        }
+       
+        //public static void facePlayerEndBehavior(Character c, GameLocation location)
+        // {
+        //c.faceGeneralDirection(new Vector2(Game1.player.GetBoundingBox().Center.X, Game1.player.GetBoundingBox().Center.Y), 0, opposite: false, useTileCalculations: false);
+        // }
 
 
     }

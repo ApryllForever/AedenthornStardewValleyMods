@@ -15,8 +15,9 @@ namespace WeddingTweaks
 {
     public partial class ModEntry
     {
-        //[HarmonyPatch(typeof(GameLocation), nameof(GameLocation.resetForPlayerEntry))]
-        public class GameLocation_resetForPlayerEntry_Patch
+        
+        [HarmonyPatch(typeof(GameLocation), nameof(GameLocation.resetForPlayerEntry))]
+        public static class GameLocation_resetForPlayerEntry_Patch
         {
             public static void Prefix(GameLocation __instance)
             {
@@ -30,8 +31,10 @@ namespace WeddingTweaks
                 }
             }
         }
-        //[HarmonyPatch(typeof(Game1), nameof(Game1.prepareSpouseForWedding))]
-        public class Game1_prepareSpouseForWedding_Patch
+
+       
+        [HarmonyPatch(typeof(Game1), nameof(Game1.prepareSpouseForWedding))]
+        public static class Game1_prepareSpouseForWedding_Patch
         {
             public static void Prefix(Farmer farmer)
             {
@@ -40,5 +43,8 @@ namespace WeddingTweaks
                 farmer.friendshipData[farmer.spouse].Status = FriendshipStatus.Engaged;
             }
         }
+        public static string lastGotCharacter = null;
+        
+
     }
 }
