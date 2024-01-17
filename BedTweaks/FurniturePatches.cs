@@ -13,7 +13,7 @@ namespace BedTweaks
     public partial class ModEntry
     {
        
-        public static bool BedFurniture_draw_Prefix(BedFurniture __instance, SpriteBatch spriteBatch, int x, int y, float alpha)
+        public static bool BedFurniture_draw_Prefix(BedFurniture __instance, SpriteBatch spriteBatch, int x, int y, float alpha, NetVector2 ___drawPosition)
         {
             if (__instance.isTemporarilyInvisible || __instance.bedType != BedFurniture.BedType.Double)
                 return true;
@@ -24,9 +24,13 @@ namespace BedTweaks
                 return true;
             }
 
-            NetVector2 drawPoss = ModEntry.SHelper.Reflection.GetField<NetVector2>(new Furniture(), "drawPosition" ).GetValue();
+            //NetVector2 drawPoss = ModEntry.SHelper.Reflection.GetField<NetVector2>(new Furniture(), "drawPosition" ).GetValue();
 
-            Vector2 drawPos = drawPoss.Value;
+            Vector2 drawPos = ___drawPosition.TargetValue;
+
+            //Furniture.isDrawingLocationFurniture ? drawPos : 
+
+            // Vector2 drawPosition = new Vector2(x * 64, y * 64 - (__instance.sourceRect.Height * 4 - __instance.boundingBox.Height));
 
             Vector2 drawPosition = Furniture.isDrawingLocationFurniture ? drawPos : new Vector2(x * 64, y * 64 - (__instance.sourceRect.Height * 4 - __instance.boundingBox.Height));
 
